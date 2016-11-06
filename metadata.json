@@ -59,6 +59,9 @@
       "operatingsystem": "Archlinux"
     }
   ],
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 4.4.0 < 5.0.0"}
+  ],
   "requirements": [
     {
       "name": "pe",
