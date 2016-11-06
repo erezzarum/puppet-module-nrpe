@@ -140,4 +140,8 @@ class nrpe::params {
   $command_prefix                  = undef
   $debug                           = 0
   $connection_timeout              = 300
+  $manage_sudoers                  = false
+  $sudoers                         = '/etc/sudoers.d/nrpe'
+  $sudo                            = false
+  $sudo_user                       = 'root'
 }
