@@ -48,6 +48,8 @@ class nrpe (
   $sudoers                         = $nrpe::params::sudoers,
   $sudo                            = $nrpe::params::sudo,
   $sudo_user                       = $nrpe::params::sudo_user,
+  $commands                        = $nrpe::params::commands,
+  $plugins                         = $nrpe::params::plugins,
 ) inherits nrpe::params {
 
   include '::nrpe::install'
@@ -62,5 +64,11 @@ class nrpe (
   Class['::nrpe::config'] ~>
   Class['::nrpe::service'] ->
   Anchor['nrpe::end']
+
+  validate_hash($commands)
+  validate_hash($plugins)
+
+  create_resources(nrpe::command, $commands, {})
+  create_resources(nrpe::plugin, $plugins, {})
 
 }
