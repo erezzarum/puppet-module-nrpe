@@ -128,6 +128,11 @@ class nrpe::params {
     }
   }
 
+  $package_ensure                  = 'present'
+  $manage_package                  = true
+  $service_ensure                  = 'running'
+  $service_manage                  = true
+  $service_enable                  = true
   $dont_blame_nrpe                 = 0
   $allow_bash_command_substitution = undef # not in very old NRPE
   $log_facility                    = 'daemon'

@@ -8,6 +8,7 @@ define nrpe::plugin (
   $package_name = $nrpe::params::nrpe_packages,
   $file_group   = $nrpe::params::nrpe_files_group,
 ) {
+
   file { "${libdir}/${title}":
     ensure  => $ensure,
     content => $content,
@@ -15,6 +16,7 @@ define nrpe::plugin (
     owner   => 'root',
     group   => $file_group,
     mode    => $mode,
-    require => Package[$package_name],
+    require => Class['::nrpe::install'],
   }
+
 }
