@@ -144,4 +144,6 @@ class nrpe::params {
   $sudoers                         = '/etc/sudoers.d/nrpe'
   $sudo                            = false
   $sudo_user                       = 'root'
+  $commands                        = {}
+  $plugins                         = {}
 }
